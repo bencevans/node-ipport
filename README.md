@@ -2,7 +2,7 @@
 
 convert ip:port object/string/buffer
 
-[GitHub](http://github.com/bencevans/node-ipport) [NPM](https://npm.org/package/ipport) [Author](http://bensbit.co.uk)
+[GitHub](http://github.com/bencevans/node-ipport) [NPM](https://npmjs.org/package/ipport) [Author](http://bensbit.co.uk)
 
 ## accepted structures
 
