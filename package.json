@@ -1,0 +1,25 @@
+{
+  "name": "ipport",
+  "version": "0.1.0",
+  "description": "convert ip:port object/string/buffer",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha -R spec test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bencevans/node-ipport.git"
+  },
+  "keywords": [
+    "ip",
+    "port",
+    "convert",
+    "network",
+    "comms"
+  ],
+  "author": "Ben Evans <ben@bensbit.co.uk> (http://bensbit.co.uk)",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "~1.7.4"
+  }
+}
