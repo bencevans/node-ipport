@@ -1,4 +1,4 @@
-# ipport
+# ipport [![Build Status](https://travis-ci.org/bencevans/node-ipport.png?branch=master)](https://travis-ci.org/bencevans/node-ipport)
 
 convert ip:port object/string/buffer
 
