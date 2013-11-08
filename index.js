@@ -1,9 +1,12 @@
 
 function readString(str) {
-  var splitStr = str.split(':');
+  var match = str.match(/^([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})\:([0-9]{0,5})$/);
+  if(!match || 1 > parseInt(match[2], 10) > 65535) {
+    throw new Error('Invalid IPv4 String');
+  }
   return {
-    address: splitStr[0],
-    port: parseInt(splitStr[1], 10)
+    address: match[1],
+    port: parseInt(match[2], 10)
   };
 }
 
@@ -15,6 +18,9 @@ function readBuffer(buf) {
 }
 
 function readObject(ipPort) {
+  if(typeof ipPort.address !== 'string' || typeof ipPort.port !== 'number') {
+    throw new Error('Invalid IP/Port Object');
+  }
   return ipPort;
 }
 

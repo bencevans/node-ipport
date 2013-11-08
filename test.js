@@ -38,3 +38,19 @@ describe('toBuffer()', function() {
     assert.deepEqual(ipport.toBuffer(new Buffer([255, 255, 255, 255, 20, 20])), new Buffer([255, 255, 255, 255, 20, 20]));
   });
 });
+
+describe('invalid inputs', function() {
+  it('should throw an error on an invalid string', function() {
+    assert.throws(function() {
+      ipport.toString('thisReallyIsNotAnIPAddress');
+    });
+  });
+  it('should throw an error on an invalid object', function() {
+    assert.throws(function() {
+      ipport.toString({});
+    });
+    assert.throws(function() {
+      ipport.toString({port:'hello', address: 123});
+    });
+  });
+});
