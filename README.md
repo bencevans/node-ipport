@@ -4,6 +4,7 @@ convert ip:port object/string/buffer
 
 [![Build Status](https://travis-ci.org/bencevans/node-ipport.png?branch=master)](https://travis-ci.org/bencevans/node-ipport)
 [![Coverage Status](https://coveralls.io/repos/bencevans/node-ipport/badge.png?branch=master)](https://coveralls.io/r/bencevans/node-ipport?branch=master)
+[![Dependency Status](https://david-dm.org/bencevans/node-ipport.png)](https://david-dm.org/bencevans/node-ipport)
 
 [GitHub](http://github.com/bencevans/node-ipport) [NPM](https://npmjs.org/package/ipport) [Author](http://bensbit.co.uk)
 
