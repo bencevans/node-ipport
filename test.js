@@ -2,13 +2,6 @@
 var assert = require('assert');
 var ipport = require('./');
 
-function rand255 () {
-  return Math.random().floor() * 255;
-}
-
-function randIPString () {
-  return rand255 + '.' + rand255 + '.' + rand255 + '.' + rand255;
-}
 
 describe('toString()', function() {
   it('should convert an object', function() {
