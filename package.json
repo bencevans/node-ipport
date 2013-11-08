@@ -4,7 +4,8 @@
   "description": "convert ip:port object/string/buffer",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha -R spec test.js"
+    "test": "node_modules/mocha/bin/mocha -R spec test.js",
+    "travis-test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,8 @@
   "author": "Ben Evans <ben@bensbit.co.uk> (http://bensbit.co.uk)",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "~1.7.4"
+    "mocha": "~1.7.4",
+    "istanbul": "~0.1.44",
+    "coveralls": "~2.3.0"
   }
 }
