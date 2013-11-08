@@ -1,9 +1,8 @@
 
+var ipPortStringRegex = /^([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})\:([0-9]{0,5})$/;
+
 function readString(str) {
-  var match = str.match(/^([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})\:([0-9]{0,5})$/);
-  if(!match || 1 > parseInt(match[2], 10) > 65535) {
-    throw new Error('Invalid IPv4 String');
-  }
+  var match = str.match(ipPortStringRegex);
   return {
     address: match[1],
     port: parseInt(match[2], 10)
@@ -18,18 +17,15 @@ function readBuffer(buf) {
 }
 
 function readObject(ipPort) {
-  if(typeof ipPort.address !== 'string' || typeof ipPort.port !== 'number') {
-    throw new Error('Invalid IP/Port Object');
-  }
   return ipPort;
 }
 
 function normalise (obj) {
-  if(typeof obj == 'string') {
+  if(typeof obj === 'string' && obj.match(ipPortStringRegex)) {
     return readString(obj);
   } else if(Buffer.isBuffer(obj)) {
     return readBuffer(obj);
-  } else if(typeof obj == 'object') {
+  } else if(typeof obj === 'object' && typeof obj.address === 'string' && typeof obj.port === 'number') {
     return readObject(obj);
   } else {
     throw new Error('Unknown IP:PORT type');
